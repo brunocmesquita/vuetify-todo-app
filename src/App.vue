@@ -63,6 +63,7 @@
 
     <v-main>
       <router-view></router-view>
+      <snackbar></snackbar>
     </v-main>
   </v-app>
 </template>
@@ -81,6 +82,9 @@ export default {
     toogleDrawer() {
       this.drawer = !this.drawer;
     },
+  },
+  components: {
+    snackbar: require('@/components/Shared/Snackbar.vue').default,
   },
 };
 </script>
