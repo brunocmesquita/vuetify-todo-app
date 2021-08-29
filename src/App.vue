@@ -27,7 +27,14 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app prominent color="primary" dark src="../public/montains.jpg">
+    <v-app-bar
+      app
+      prominent
+      color="primary"
+      shrink-on-scroll
+      dark
+      src="../public/montains.jpg"
+    >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -35,7 +42,7 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="toogleDrawer"></v-app-bar-nav-icon>
 
       <v-app-bar-title>Vuetify Todo</v-app-bar-title>
 
@@ -70,5 +77,10 @@ export default {
     ],
     right: null,
   }),
+  methods: {
+    toogleDrawer() {
+      this.drawer = !this.drawer;
+    },
+  },
 };
 </script>
