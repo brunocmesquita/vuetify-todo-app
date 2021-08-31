@@ -41,24 +41,16 @@
           gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-
-      <v-app-bar-nav-icon @click="toogleDrawer"></v-app-bar-nav-icon>
-
-      <v-app-bar-title>Vuetify Todo</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <v-container class="pa-0">
+        <v-row>
+          <v-app-bar-nav-icon @click="toogleDrawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+          <search></search>
+        </v-row>
+        <v-row>
+          <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
+        </v-row>
+      </v-container>
     </v-app-bar>
 
     <v-main>
@@ -85,6 +77,7 @@ export default {
   },
   components: {
     snackbar: require('@/components/Shared/Snackbar.vue').default,
+    search: require('@/components/Tools/Search.vue').default,
   },
 };
 </script>
