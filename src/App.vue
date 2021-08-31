@@ -1,18 +1,21 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer app v-model="drawer">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Vuetify Todo
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Vuetify Course
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
+    <v-navigation-drawer app v-model="drawer" :mobile-breakpoint="768">
+      <v-img
+        class="pa-4  pt-7"
+        src="../public/montains.jpg"
+        height="170"
+        color="primary"
+        gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+      >
+        <v-avatar size="70" class="mb-2">
+          <img src="../public/profile.jpeg" alt="Bruno" />
+        </v-avatar>
+        <div class="white--text text-subtitle-1 font-weight-bold">
+          Bruno Mesquita
+        </div>
+        <div class="white--text text-subtitle-2">brunocmesquita</div>
+      </v-img>
 
       <v-list dense nav>
         <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
@@ -42,7 +45,7 @@
           gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-      <v-container class="pa-0">
+      <v-container class="header-container pa-0">
         <v-row>
           <v-app-bar-nav-icon @click="toogleDrawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -85,3 +88,8 @@ export default {
   },
 };
 </script>
+
+<style lang="sass">
+.header-container
+  max-width: none !important
+</style>
