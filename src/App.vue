@@ -30,6 +30,7 @@
     <v-app-bar
       app
       prominent
+      height="170"
       color="primary"
       shrink-on-scroll
       dark
@@ -50,9 +51,11 @@
         <v-row>
           <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
         </v-row>
+        <v-row>
+          <live-date-time></live-date-time>
+        </v-row>
       </v-container>
     </v-app-bar>
-
     <v-main>
       <router-view></router-view>
       <snackbar></snackbar>
@@ -78,6 +81,7 @@ export default {
   components: {
     snackbar: require('@/components/Shared/Snackbar.vue').default,
     search: require('@/components/Tools/Search.vue').default,
+    'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
   },
 };
 </script>
