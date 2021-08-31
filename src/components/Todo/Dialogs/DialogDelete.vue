@@ -1,13 +1,13 @@
 <template>
   <v-dialog :value="true" persistent max-width="290">
     <v-card>
-      <v-card-title class="text-h5">
-        Delete Task?
+      <v-card-title class="headline">
+        Delete task?
       </v-card-title>
-      <v-card-text>Are you shure you want to delete the task?</v-card-text>
+      <v-card-text>Are you sure you wanna delete this task?</v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn text @click="$emit('close')">
+        <v-btn @click="$emit('close')" text>
           No
         </v-btn>
         <v-btn
