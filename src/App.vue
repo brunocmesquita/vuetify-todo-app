@@ -4,7 +4,7 @@
       <v-img
         class="pa-4  pt-7"
         src="../public/montains.jpg"
-        height="170"
+        :height="$route.path === '/' ? '238' : '170'"
         color="primary"
         gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
       >
@@ -33,7 +33,7 @@
     <v-app-bar
       app
       prominent
-      height="170"
+      :height="$route.path === '/' ? '238' : '170'"
       color="primary"
       shrink-on-scroll
       dark
@@ -42,7 +42,7 @@
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
         ></v-img>
       </template>
       <v-container class="header-container pa-0">
@@ -58,6 +58,9 @@
         </v-row>
         <v-row>
           <live-date-time></live-date-time>
+        </v-row>
+        <v-row v-if="$route.path === '/'">
+          <field-add-task></field-add-task>
         </v-row>
       </v-container>
     </v-app-bar>
@@ -90,6 +93,7 @@ export default {
     snackbar: require('@/components/Shared/Snackbar.vue').default,
     search: require('@/components/Tools/Search.vue').default,
     'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
+    'field-add-task': require('@/components/Todo/FieldAddTask.vue').default,
   },
 };
 </script>
