@@ -78,6 +78,9 @@ export default {
     ],
     right: null,
   }),
+  mounted() {
+    this.$store.dispatch('getTasks');
+  },
   methods: {
     toogleDrawer() {
       this.drawer = !this.drawer;
