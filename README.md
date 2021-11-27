@@ -1,5 +1,7 @@
 # vuetify-todo-course
 
+Project of the Vuetify course on Udemy.
+
 ## Project setup
 ```
 yarn install
